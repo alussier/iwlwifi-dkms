@@ -1,0 +1,16 @@
+To rebuild (would probably better be done with mkdeb):
+
+$ cd iwlwifi-4.6.7
+$ make clean
+$ sudo rsync -av . /usr/src/iwlwifi-4.6.7 --exclude .git
+$ sudo dkms add iwlwifi/4.6.7
+$ sudo dkms build iwlwifi/4.6.7
+$ sudo dkms mkdeb iwlwifi/4.6.7
+$ cp /var/lib/dkms/iwlwifi/4.6.7/deb/iwlwifi-dkms_4.6.7_all.deb .
+
+$ mkdir tmp
+$ cd tmp
+$ ar p ../iwlwifi-dkms_4.6.7_all.deb control.tar.gz | tar -xz
+$ cp ../control .
+$ tar czf control.tar.gz *[!z]
+$ ar r ../iwlwifi-dkms_4.6.7_all.deb control.tar.gz 

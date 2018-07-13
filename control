@@ -1,0 +1,9 @@
+Package: iwlwifi-dkms
+Version: 4.6.7
+Architecture: all
+Maintainer: UberATC Package Maintainer <package-maintainer@uber.com>
+Installed-Size: 3179
+Depends: dkms (>= 1.95), linux-generic-lts-xenial (>= 4.4.0.93.77), make
+Section: kernel
+Priority: extra
+Description: iwlwifi driver in DKMS format.
